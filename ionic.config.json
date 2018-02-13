@@ -1,0 +1,8 @@
+{
+  "name": "moneyhub",
+  "app_id": "272582f9",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
