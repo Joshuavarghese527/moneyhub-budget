@@ -1,14 +1,32 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/background.svg') no-repeat">
+        <ion-icon ios="ios-add-circle" md="md-add-circle" color="primary" [@bounce]='state' (@bounce.done)="animationDone()"></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>ADD A GOAL</h2>
+        <p>Want to save up for a car, tuition, or your next big event? Aee all of your goals & their progress.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/background.svg') no-repeat">
+        <ion-icon ios="ios-analytics" md="ios-analytics" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>KEEP TRACK OF YOUR GOALS</h2>
+        <p>Add or withdraw money from your goal and stay on top of your budgeting.</p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="diag" style="background: url('assets/imgs/background.svg') no-repeat">
+        <ion-icon ios="ios-calendar" md="md-calendar" color="primary" [@bounce]='state'></ion-icon>
+      </div>
+      <div [@bounce]='state'>
+        <h2>STAY ON TOP OF YOUR GOALS</h2>
+        <p>Make sure you know where you are in your goal process.</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <button (click)="skip()" id="skip">{{ skipMsg }}</button>
 </ion-content>
